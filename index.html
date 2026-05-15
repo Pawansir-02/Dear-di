@@ -4,12 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>dear arti di </title>
+<title>dear arti di</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -24,8 +23,6 @@ body{
   color:#1d2433;
   user-select:none;
 }
-
-/* BACKGROUND */
 
 .soft-bg{
   position:fixed;
@@ -43,22 +40,10 @@ body{
 }
 
 @keyframes floatUp{
-  0%{
-    transform:translateY(105vh) scale(0.7);
-    opacity:0;
-  }
-
-  20%{
-    opacity:1;
-  }
-
-  100%{
-    transform:translateY(-10vh) scale(1.25);
-    opacity:0;
-  }
+  0%{transform:translateY(105vh) scale(0.7);opacity:0;}
+  20%{opacity:1;}
+  100%{transform:translateY(-10vh) scale(1.25);opacity:0;}
 }
-
-/* PASSWORD SCREEN */
 
 .password-screen{
   position:fixed;
@@ -100,12 +85,6 @@ body{
   margin-bottom:14px;
 }
 
-.password-card p{
-  color:#536079;
-  line-height:1.7;
-  margin-bottom:18px;
-}
-
 .password-card input{
   width:100%;
   padding:16px;
@@ -136,6 +115,7 @@ body{
   font-weight:800;
   box-shadow:0 16px 36px rgba(80,83,200,0.24);
   transition:0.2s;
+  white-space:nowrap;
 }
 
 .btn:hover{
@@ -148,8 +128,6 @@ body{
   display:none;
 }
 
-/* PAGE */
-
 .page{
   position:relative;
   z-index:1;
@@ -158,8 +136,6 @@ body{
   padding:40px 0 70px;
   display:none;
 }
-
-/* HERO */
 
 .hero{
   min-height:88vh;
@@ -198,8 +174,6 @@ body{
   box-shadow:0 12px 35px rgba(48,65,120,0.08);
 }
 
-/* CARD */
-
 .card{
   background:rgba(255,255,255,0.84);
   border:1px solid rgba(76,110,245,0.18);
@@ -221,8 +195,6 @@ body{
   line-height:1.9;
   color:#2f3648;
 }
-
-/* AUDIO */
 
 .audio-wrap{
   display:grid;
@@ -253,7 +225,34 @@ audio{
   width:100%;
 }
 
-/* PASSWORD BOX */
+.share-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+.link-chip{
+  flex:1;
+  min-width:220px;
+  padding:15px 18px;
+  border-radius:18px;
+  background:rgba(238,243,255,0.95);
+  border:1px solid rgba(76,110,245,0.18);
+  font-weight:800;
+  color:#2e429a;
+  text-align:left;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.link-chip:hover{
+  background:#e9efff;
+}
 
 .password-list{
   display:grid;
@@ -273,7 +272,12 @@ audio{
   word-break:break-word;
 }
 
-/* FOOTER */
+.copy-msg{
+  margin-top:10px;
+  color:#198754;
+  font-weight:700;
+  display:none;
+}
 
 .footer{
   text-align:center;
@@ -283,7 +287,6 @@ audio{
 }
 
 @media(max-width:560px){
-
   .hero{
     min-height:85vh;
   }
@@ -293,8 +296,20 @@ audio{
     padding:24px;
   }
 
-}
+  .share-box{
+    flex-direction:column;
+    align-items:stretch;
+  }
 
+  .link-chip{
+    width:100%;
+    text-align:center;
+  }
+
+  .btn{
+    width:100%;
+  }
+}
 </style>
 </head>
 
@@ -302,17 +317,12 @@ audio{
 
 <div class="soft-bg" id="softBg"></div>
 
-<!-- PASSWORD SCREEN -->
-
 <section class="password-screen" id="passwordScreen">
-
   <div class="password-card">
-
     <div class="badge">Password kgs batch ka hai</div>
 
     <h1>Enter Password</h1>
 
-   
     <input
       type="password"
       id="passwordInput"
@@ -327,19 +337,12 @@ audio{
     <div class="error" id="errorMsg">
       Wrong password. Please try again.
     </div>
-
   </div>
-
 </section>
-
-<!-- MAIN PAGE -->
 
 <main class="page" id="mainPage">
 
-  <!-- HERO -->
-
   <section class="hero">
-
     <div class="badge">Dear Di</div>
 
     <h1 class="hero-title">
@@ -354,13 +357,9 @@ audio{
     <div class="date-line">
       Scroll Down ⇣
     </div>
-
   </section>
 
-  <!-- MESSAGE -->
-
   <section class="card">
-
     <h2>My Message</h2>
 
     <p class="message-text">
@@ -368,17 +367,12 @@ audio{
       Please, if possible, help me this one last time.
       I don’t want to disturb you again and again,
       but this is important for me.
-
       If you can help, please help.
       If you can’t, no problem — I will understand.
     </p>
-
   </section>
 
-  <!-- AUDIO -->
-
   <section class="card">
-
     <h2>Two Audios</h2>
 
     <p class="subtitle" style="font-size:1rem;margin-bottom:16px;">
@@ -386,59 +380,58 @@ audio{
     </p>
 
     <div class="audio-wrap">
-
       <div class="audio-card">
-
         <h3>Audio 1</h3>
-
         <p>Please listen once.</p>
 
         <audio controls controlsList="nodownload noplaybackrate">
-
           <source src="11.mp3" type="audio/mpeg">
-
         </audio>
-
       </div>
 
       <div class="audio-card">
-
         <h3>Audio 2</h3>
-
         <p>Last audio message.</p>
 
         <audio controls controlsList="nodownload noplaybackrate">
-
           <source src="12.mp3" type="audio/mpeg">
-
         </audio>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- LINK + PASSWORD -->
-
   <section class="card">
-
     <h2>Share This Link</h2>
 
     <p class="message-text">
-      Ye link  copy kar ke aap usko send kar dena bass its fully safe  and password v send kar dijye ga plz 
+      Ye link copy kar ke aap usko send kar dena bass its fully safe and password v send kar dijye ga plz.
     </p>
-<p>ya phir aapko jo diye wo pura sendd kar sakte hai </p>
-    <div class="password-list">
 
-      <div class="pass-chip" id="shareLink">
+    <p class="message-text">
+      Ya phir aapko jo diye wo pura send kar sakte hai.
+    </p>
+
+    <div class="share-box">
+      <a
+        class="link-chip"
+        id="shareLink"
+        href="https://pawansir-02.github.io/thank/"
+        target="_blank"
+      >
         https://pawansir-02.github.io/thank/
-      </div>
+      </a>
 
       <button class="btn" onclick="copyLink()">
         Copy Link
       </button>
 
+      <button class="btn" onclick="openLink()">
+        Open Link
+      </button>
+    </div>
+
+    <div class="copy-msg" id="copyMsg">
+      Link copied successfully!
     </div>
 
     <p class="message-text" style="margin-top:22px;">
@@ -446,21 +439,14 @@ audio{
     </p>
 
     <div class="password-list">
-
       <div class="pass-chip">Muskan</div>
-
       <div class="pass-chip">77</div>
-
       <div class="pass-chip">27</div>
-
+      <div class="pass-chip">Arti@123</div>
     </div>
-
   </section>
 
-  <!-- LAST REQUEST -->
-
   <section class="card">
-
     <h2>Last Request</h2>
 
     <p class="message-text">
@@ -468,7 +454,6 @@ audio{
       Agar aap help nahi kar sakte ho to please hame block kar dena.
       Main bas ek last time properly explain karna chahta tha.
     </p>
-
   </section>
 
   <div class="footer">
@@ -478,131 +463,93 @@ audio{
 </main>
 
 <script>
-
-/* BACKGROUND */
-
 const softBg=document.getElementById('softBg');
 
 for(let i=0;i<26;i++){
-
   const bubble=document.createElement('div');
 
   bubble.className='bubble';
-
   bubble.style.left=Math.random()*100+'vw';
-
   bubble.style.animationDelay=Math.random()*10+'s';
-
   bubble.style.animationDuration=(8+Math.random()*7)+'s';
-
   bubble.style.width=(10+Math.random()*24)+'px';
-
   bubble.style.height=bubble.style.width;
 
   softBg.appendChild(bubble);
 }
-
-/* PASSWORD */
 
 function normalizePassword(value){
   return value.trim().toLowerCase();
 }
 
 function checkPassword(){
-
   const input=document.getElementById('passwordInput');
-
   const error=document.getElementById('errorMsg');
-
   const password=normalizePassword(input.value);
 
   if(
     password==='muskan' ||
-    password==='Arti@123' ||
+    password==='77' ||
+    password==='27' ||
     password==='arti@123'
   ){
-
     document.getElementById('passwordScreen').style.display='none';
-
     document.getElementById('mainPage').style.display='block';
 
     window.scrollTo({
       top:0,
       behavior:'smooth'
     });
-
   }else{
-
     error.style.display='block';
-
     input.value='';
-
     input.focus();
   }
 }
 
-/* ENTER KEY */
-
 document.getElementById('passwordInput').addEventListener('keydown',function(event){
-
   if(event.key==='Enter'){
     checkPassword();
   }
-
 });
 
-/* COPY LINK */
-
 function copyLink(){
+  const link='https://pawansir-02.github.io/thank/';
+  const copyMsg=document.getElementById('copyMsg');
 
-  const link=document.getElementById('shareLink').innerText;
+  navigator.clipboard.writeText(link).then(function(){
+    copyMsg.style.display='block';
 
-  navigator.clipboard.writeText(link).then(()=>{
-
-    alert('Link copied!');
-
+    setTimeout(function(){
+      copyMsg.style.display='none';
+    },2000);
   });
-
 }
 
-/* BLOCK SHORTCUTS */
+function openLink(){
+  window.open('https://pawansir-02.github.io/thank/','_blank');
+}
 
 document.addEventListener('keydown',function(event){
-
   const blocked=
     event.key==='F12' ||
-
-    (event.ctrlKey &&
-    event.shiftKey &&
-    ['I','J','C'].includes(event.key.toUpperCase())) ||
-
-    (event.ctrlKey &&
-    ['U','S'].includes(event.key.toUpperCase()));
+    (event.ctrlKey && event.shiftKey && ['I','J','C'].includes(event.key.toUpperCase())) ||
+    (event.ctrlKey && ['U','S'].includes(event.key.toUpperCase()));
 
   if(blocked){
     event.preventDefault();
   }
-
 });
 
-/* ONE AUDIO AT A TIME */
-
 document.querySelectorAll('audio').forEach(audio=>{
-
   audio.addEventListener('play',()=>{
-
     document.querySelectorAll('audio').forEach(other=>{
-
       if(other!==audio){
         other.pause();
       }
-
     });
-
   });
-
 });
-
 </script>
 
 </body>
